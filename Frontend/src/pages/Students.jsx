@@ -1,92 +1,90 @@
 import { Plus, Eye, Pencil, Trash2, X } from "lucide-react";
 import Layout from "../components/layout/Layout";
 import { toast } from "sonner";
-import { useState , useEffect} from "react";
-import { apiGet } from "../api/api";
-
-type Student = {
-  id: string;
-  name: string;
-  room: string;
-  phone: string;
-  status: "Active" | "Inactive" | "Pending";
-};
-
-const initialStudents: Student[] = [
-  { id: "STU001", name: "John Smith", room: "101", phone: "+1 234-567-8901", status: "Active" },
-  { id: "STU002", name: "Sarah Johnson", room: "205", phone: "+1 234-567-8902", status: "Active" },
-  
-];
+import { useState, useEffect } from "react";
+import { getAPI, putAPI } from "../api/api";
+import { set } from "date-fns";
 
 const Students = () => {
   const [showForm, setShowForm] = useState(false);
-  const [editId, setEditId] = useState<string | null>(null);
+  const [editId, setEditId] = useState(null);
 
   const [students, setStudents] = useState([]);
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    apiGet("/students")
-      .then(setStudents)
-      .catch(console.error)
-      .finally(() => setLoading(false));
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        setStudents(await getAPI("http://localhost:5000/students"));
+        setRooms(await getAPI("http://localhost:5000/rooms/available"));
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching students:", error);
+        setLoading(false);
+      }
+    };
+    fetchData();
   }, []);
 
+  const [rooms, setRooms] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
-    room: "",
+    roomNo: "",
     phone: "",
-    status: "Active" as Student["status"],
+    status: "Active",
   });
 
   const openAddForm = () => {
     setEditId(null);
-    setFormData({ name: "", room: "", phone: "", status: "Active" });
+    setFormData({ name: "", roomNo: "", phone: "", status: "Active" });
     setShowForm(true);
   };
 
-  const openEditForm = (student: Student) => {
-    setEditId(student.id);
-    setFormData(student);
+  const openEditForm = (_id) => {
+    const student = students.find((s) => s._id === _id);
+    setEditId(student._id);
+    setFormData({
+      _id: student._id,
+      name: student.name,
+      roomNo: student.room?.roomNo || "",
+      phone: student.phone,
+      status: student.status,
+    });
     setShowForm(true);
   };
 
   const handleChange = (e) => {
+    e.preventDefault();
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!formData.name || !formData.room || !formData.phone) {
-      toast.error("Please fill all fields");
-      return;
-    }
-
     if (editId) {
-      setStudents((prev) =>
-        prev.map((s) => (s.id === editId ? { ...s, ...formData } : s))
-      );
-      toast.success("Student updated successfully");
-    } else {
-      const newStudent: Student = {
-        id: `STU${students.length + 1}`.padStart(6, "0"),
-        ...formData,
-      };
-      setStudents((prev) => [...prev, newStudent]);
-      toast.success("Student added successfully");
+      try {
+        putAPI(`http://localhost:5000/students/${editId}`, formData);
+        const updatedStudents = students.map((student) =>
+          student._id === editId ? { ...student, ...formData } : student
+        );
+        setStudents(updatedStudents);
+        toast.success("Student updated");
+      } catch (error) {
+        toast.error("Failed to update student");
+      }
     }
 
     setShowForm(false);
   };
 
-  const handleDelete = (id: string, name: string) => {
+  const handleDelete = (SID, name) => {
     if (!window.confirm(`Delete student?\n\n${name}`)) return;
-    setStudents((prev) => prev.filter((s) => s.id !== id));
+    setStudents((prev) => prev.filter((s) => s.SID !== SID));
     toast.success("Student deleted");
   };
 
-  const getStatusBadge = (status: string) =>
+  const getStatusBadge = (status) =>
     status === "Active"
       ? "badge-success"
       : status === "Inactive"
@@ -117,7 +115,7 @@ const Students = () => {
               {editId ? "Edit Student" : "Add Student"}
             </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-3">
+            <form className="space-y-3" onSubmit={handleSubmit}>
               <input
                 name="name"
                 placeholder="Student Name"
@@ -126,13 +124,22 @@ const Students = () => {
                 className="form-input w-full"
               />
 
-              <input
-                name="room"
+              <select
+                name="roomNo"
                 placeholder="Room No"
-                value={formData.room}
+                value={formData.roomNo}
                 onChange={handleChange}
                 className="form-input w-full"
-              />
+              >
+                <option value="" disabled>
+                  Select Available Room
+                </option>
+                {rooms.map((room) => (
+                  <option key={room.roomNo} value={room.roomNo}>
+                    {room.roomNo}
+                  </option>
+                ))}
+              </select>
 
               <input
                 name="phone"
@@ -188,7 +195,7 @@ const Students = () => {
               <tr key={student._id}>
                 <td>{student.SID}</td>
                 <td>{student.name}</td>
-                <td>{student.room}</td>
+                <td>{student.room?.roomNo}</td>
                 <td>{student.phone}</td>
                 <td>
                   <span className={`badge ${getStatusBadge(student.status)}`}>
@@ -200,13 +207,13 @@ const Students = () => {
                     <Eye className="w-4 h-4" />
                   </button>
                   <button
-                    onClick={() => openEditForm(student)}
+                    onClick={() => openEditForm(student._id)}
                     className="btn-icon-edit"
                   >
                     <Pencil className="w-4 h-4" />
                   </button>
                   <button
-                    onClick={() => handleDelete(student.id, student.name)}
+                    onClick={() => handleDelete(student._id, student.name)}
                     className="btn-icon-delete"
                   >
                     <Trash2 className="w-4 h-4" />

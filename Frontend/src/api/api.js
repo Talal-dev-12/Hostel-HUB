@@ -1,4 +1,6 @@
+import axios from "axios";
 const API_URL = import.meta.env.VITE_API_URL;
+
 
 export async function apiGet(endpoint) {
   const res = await fetch(`${API_URL}${endpoint}`);
@@ -29,4 +31,35 @@ export async function apiDelete(endpoint) {
     method: "DELETE",
   });
   return res.json();
+}
+
+
+export async function getAPI(api) {
+  try{
+    const res = await axios.get(api)
+  return res.data;
+  }catch(error){
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+}
+
+export async function postAPI(api) {
+  try{
+    const res = await axios.post(api)
+    return res.data;
+  }catch(error){
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+}
+
+export async function putAPI(api , data) {
+  try{
+    const res = await axios.put(api,data)
+    return res.data;
+  }catch(error){
+    console.error("Error fetching data:", error);
+     throw error;
+  }
 }

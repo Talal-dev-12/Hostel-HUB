@@ -10,32 +10,34 @@ app.use(cors({
   origin: "http://localhost:8080",
   credentials: true,
 }));
-
-app.listen(process.env.PORT, () => {
-  console.log("Server is running...");
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+  console.log("Server is running... PORT :", port);
 })
 
 // Student
 const studentRoutes = require("./Route/Students");
-app.use("/api/students", studentRoutes);
+app.use("/students", studentRoutes);
 
 // Complaint
 const complaintRoutes = require("./Route/Complaints");
-app.use("/api/complaints", complaintRoutes);
+app.use("/complaints", complaintRoutes);
 
 
 // Payment
 const paymentRoutes = require("./Route/Payments");
-app.use("/api/payments", paymentRoutes);
+app.use("/payments", paymentRoutes);
 
 // Room
 const roomRoutes = require("./Route/Rooms");
-app.use("/api/rooms", roomRoutes);
+app.use("/rooms", roomRoutes);
 
 // Staff
 const staffRoutes = require("./Route/Staff");
-app.use("/api/staff", staffRoutes);
+app.use("/staff", staffRoutes);
 
 // Settings
 const settingRoutes = require("./Route/Settings");
-app.use("/api/settings", settingRoutes);
+app.use("/settings", settingRoutes);
+
+

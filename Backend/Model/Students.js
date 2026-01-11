@@ -29,7 +29,6 @@ const studentSchema = new mongoose.Schema({
     ref: "Room",
     required: true
   }
-
 }, { timestamps: true });
 
 module.exports = mongoose.model("Student", studentSchema);

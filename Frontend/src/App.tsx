@@ -11,6 +11,7 @@ import Complaints from "./pages/Complaints";
 import Staff from "./pages/Staff";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
+import Data from "./pages/Data";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/data" element={<Data />} />
           <Route path="/students" element={<Students />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/payments" element={<Payments />} />
