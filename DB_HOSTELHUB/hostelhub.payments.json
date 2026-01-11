@@ -1,0 +1,74 @@
+[{
+  "_id": {
+    "$oid": "6961540364919ed278b81499"
+  },
+  "paymentCode": "PAY-2024-001",
+  "student": {
+    "$oid": "65b1234567890abcdef11111"
+  },
+  "amount": 5000,
+  "month": "January",
+  "status": "Paid",
+  "paidAt": {
+    "$date": "2024-01-05T10:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6961540364919ed278b8149a"
+  },
+  "paymentCode": "PAY-2024-002",
+  "student": {
+    "$oid": "65b1234567890abcdef22222"
+  },
+  "amount": 5000,
+  "month": "January",
+  "status": "Pending",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6961540364919ed278b8149b"
+  },
+  "paymentCode": "PAY-2024-003",
+  "student": {
+    "$oid": "65b1234567890abcdef33333"
+  },
+  "amount": 5500,
+  "month": "February",
+  "status": "Paid",
+  "paidAt": {
+    "$date": "2024-02-02T11:30:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6961540364919ed278b8149c"
+  },
+  "paymentCode": "PAY-2024-004",
+  "student": {
+    "$oid": "65b1234567890abcdef44444"
+  },
+  "amount": 4800,
+  "month": "February",
+  "status": "Pending",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6961540364919ed278b8149d"
+  },
+  "paymentCode": "PAY-2024-005",
+  "student": {
+    "$oid": "65b1234567890abcdef55555"
+  },
+  "amount": 5000,
+  "month": "March",
+  "status": "Paid",
+  "paidAt": {
+    "$date": "2024-03-01T09:15:00.000Z"
+  },
+  "__v": 0
+}]

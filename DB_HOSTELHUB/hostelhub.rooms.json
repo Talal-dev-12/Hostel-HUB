@@ -1,0 +1,85 @@
+[{
+  "_id": {
+    "$oid": "6961531137699128bfc6b9ae"
+  },
+  "roomNo": "101",
+  "type": "Ultra Room Single",
+  "capacity": 10,
+  "occupied": 1,
+  "status": "Available",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:12:17.186Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:56.630Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6961531137699128bfc6b9af"
+  },
+  "roomNo": "102",
+  "type": "Double",
+  "capacity": 2,
+  "occupied": 1,
+  "status": "Available",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:12:17.187Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:56.629Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6961531137699128bfc6b9b0"
+  },
+  "roomNo": "103",
+  "type": "Triple",
+  "capacity": 3,
+  "occupied": 4,
+  "status": "Full",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:12:17.187Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:27.726Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6961531137699128bfc6b9b1"
+  },
+  "roomNo": "201",
+  "type": "Deluxe",
+  "capacity": 2,
+  "occupied": 0,
+  "status": "Full",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:12:17.187Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T20:51:05.860Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6961531137699128bfc6b9b2"
+  },
+  "roomNo": "202",
+  "type": "Double",
+  "capacity": 2,
+  "occupied": 1,
+  "status": "Available",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:12:17.187Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:34.147Z"
+  }
+}]

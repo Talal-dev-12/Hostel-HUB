@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "696152b0c11b662f9105b6a9"
+  },
+  "staffCode": "STF001",
+  "name": "Rajesh Kumar",
+  "position": "Manager",
+  "contact": "9876543210",
+  "shift": "Day",
+  "status": "Active",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:10:40.225Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-09T19:10:40.225Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696152b0c11b662f9105b6aa"
+  },
+  "staffCode": "STF002",
+  "name": "Sunita Williams",
+  "position": "Receptionist",
+  "contact": "8765432109",
+  "shift": "Day",
+  "status": "Active",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696152b0c11b662f9105b6ab"
+  },
+  "staffCode": "STF003",
+  "name": "Vikram Singh",
+  "position": "Security",
+  "contact": "7654321098",
+  "shift": "Night",
+  "status": "Active",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696152b0c11b662f9105b6ac"
+  },
+  "staffCode": "STF004",
+  "name": "Amit Taylor",
+  "position": "Maintenance",
+  "contact": "6543210987",
+  "shift": "Day",
+  "status": "Leave",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696152b0c11b662f9105b6ad"
+  },
+  "staffCode": "STF005",
+  "name": "Rani Devi",
+  "position": "Cleaner",
+  "contact": "9988776655",
+  "shift": "Night",
+  "status": "In-Active",
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-09T19:10:40.227Z"
+  }
+}]

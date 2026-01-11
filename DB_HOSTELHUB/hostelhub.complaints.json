@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "6961535d6a1aa9ef15332524"
+  },
+  "complaintCode": "CMP001",
+  "student": {
+    "$oid": "65b1234567890abcdef11111"
+  },
+  "room": {
+    "$oid": "65a1234567890abcdef12345"
+  },
+  "issue": "Fan is not working in the room.",
+  "status": "Pending",
+  "date": {
+    "$date": "2024-05-10T10:30:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6961535d6a1aa9ef15332525"
+  },
+  "complaintCode": "CMP002",
+  "student": {
+    "$oid": "65b1234567890abcdef22222"
+  },
+  "room": {
+    "$oid": "65a1234567890abcdef12346"
+  },
+  "issue": "Water leakage in the bathroom.",
+  "status": "Resolved",
+  "date": {
+    "$date": "2024-05-12T14:15:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6961535d6a1aa9ef15332526"
+  },
+  "complaintCode": "CMP003",
+  "student": {
+    "$oid": "65b1234567890abcdef33333"
+  },
+  "room": {
+    "$oid": "65a1234567890abcdef12347"
+  },
+  "issue": "Wi-Fi signal strength is very low.",
+  "status": "Pending",
+  "date": {
+    "$date": "2024-05-15T09:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6961535d6a1aa9ef15332527"
+  },
+  "complaintCode": "CMP004",
+  "student": {
+    "$oid": "65b1234567890abcdef44444"
+  },
+  "room": {
+    "$oid": "65a1234567890abcdef12348"
+  },
+  "issue": "Door lock is jammed.",
+  "status": "Pending",
+  "date": {
+    "$date": "2024-05-16T18:45:00.000Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,95 @@
+[{
+  "_id": {
+    "$oid": "696151fccfa9ab8698c6c630"
+  },
+  "SID": "STU001",
+  "name": "Talal Nadeem",
+  "phone": "0311378840",
+  "status": "Active",
+  "room": {
+    "$oid": "6961531137699128bfc6b9b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:07:40.985Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:21.142Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696151fccfa9ab8698c6c631"
+  },
+  "SID": "STU002",
+  "name": "Sanya Iyer",
+  "phone": "08765432109",
+  "status": "Active",
+  "room": {
+    "$oid": "6961531137699128bfc6b9b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:07:40.987Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:16.377Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696151fccfa9ab8698c6c632"
+  },
+  "SID": "STU003",
+  "name": "Rahul Verma123123",
+  "phone": "7654321098",
+  "status": "Pending",
+  "room": {
+    "$oid": "6961531137699128bfc6b9b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:07:40.987Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:47.569Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696151fccfa9ab8698c6c633"
+  },
+  "SID": "STU004",
+  "name": "Priya Sharma",
+  "phone": "6543210987wda",
+  "status": "Inactive",
+  "room": {
+    "$oid": "6961531137699128bfc6b9b0"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:07:40.987Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:42.995Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "696151fccfa9ab8698c6c634"
+  },
+  "SID": "STU005",
+  "name": "Ishaan Khan",
+  "phone": "99887766552323",
+  "status": "Active",
+  "room": {
+    "$oid": "6961531137699128bfc6b9af"
+  },
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-01-09T19:07:40.987Z"
+  },
+  "updatedAt": {
+    "$date": "2026-01-11T21:14:56.631Z"
+  }
+}]
